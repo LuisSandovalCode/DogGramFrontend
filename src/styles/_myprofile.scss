@@ -1,0 +1,9 @@
+.h2Titulo{
+    color: $color-white;
+}
+.myImageGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: start;
+}

@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Suspense,useContext} from 'react';
+import './App.scss';
+import NavBar from './components/navbar/NavBar';
+import { Redirect, Router } from '@reach/router';
+import HomePage from './components/home/Home'; 
+import User from './components/user/User';
+import NewUser from './components/user/NewUser';
+import { AppContext } from './AppContext';
+import MyProfile from './components/user/myprofile';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+export const App = () => {
+  
+  const { isAuth  } = useContext(AppContext);
+  console.log(isAuth);
+  return(
+    <Suspense fallback={<div/>}>
+          <Router>
+            {isAuth && <HomePage path="/home"/>}
+            {isAuth && <MyProfile path="/myprofile"/>}
+            {!isAuth && <User path="/"/>}
+            {!isAuth && <NewUser path="/newuser"/>}
+          </Router>
+          <NavBar/>
+      </Suspense>
+  )
+};

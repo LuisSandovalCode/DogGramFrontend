@@ -1,0 +1,59 @@
+.Formulario{
+    padding: 16px 0;
+    margin: 15;
+    background-color: $color-darkBlue;
+}
+
+.InputForm{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 8px 4px;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    &[disabled]{
+        opacity: .3;
+    }
+}
+
+.TituloInput{
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+    color: $color-white;
+    margin-bottom: 5px;
+}
+
+.ErrorInput{
+    color: red;
+    font-size: 14px;
+}
+
+.containerButtons{
+    margin: 15px;
+    background-color: $color-darkBlue;
+}
+
+.tituloFormulario{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: $color-white;
+}
+
+.BtnSubmit{
+    margin-top: 10px;
+    text-decoration: none;
+    background: #8d00ff;
+    border-radius: 3px;
+    color: #fff;
+    height: 32px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    &[disabled]{
+        opacity: .3;
+    }
+}
